@@ -1,32 +1,112 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    padding: 40px;
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Карточка */
+.container {
+  background: #ffffff;
+  padding: 40px;
+  width: 360px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+.container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Аватар */
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.avatar:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Заголовки */
 h1 {
-    color: #333;
+  margin: 0;
+  font-size: 24px;
+  color: #222;
 }
 
-p {
-    font-size: 18px;
+h1, .subtitle, ul {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
+.container:hover h1, 
+.container:hover .subtitle, 
+.container:hover ul {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+h2 {
+  margin: 30px 0 10px;
+  font-size: 18px;
+  color: #444;
+}
+
+/* Текст */
+.subtitle {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+/* Список */
 ul {
-    padding-left: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 15px 0 30px;
 }
 
+ul li {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Кнопка */
 .btn {
-    display: inline-block;
-    padding: 12px 20px;
-    background-color: #4CAF50;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    cursor: pointer;
+  display: inline-block;
+  padding: 14px 28px;
+  background: #667eea;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
 .btn:hover {
-    background-color: #45a049;
+  background-color: #45a049; /* Цвет при наведении */
+  transform: scale(1.05); /* Лёгкое увеличение */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Тень при наведении */
 }
-
